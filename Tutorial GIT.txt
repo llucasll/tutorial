@@ -1,0 +1,41 @@
+INSTALAR
+	$ sudo apt install git
+
+CONFIGURAR SSH
+
+	Tutorial: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+
+	VER SE TEM CHAVE SSH
+		$ ls -a ~/.ssh
+	GERAR SSH (substituir "[label]" por um rótulo personalizado)
+		$ ssh-keygen -t rsa -b 4096 -C "[label]"
+		ENTER para caminho default
+		Inserir passphrase
+	CONFIGURAR SSH
+		$ eval "$(ssh-agent -s)"
+		$ ssh-add ~/.ssh/id_rsa
+
+ADICIONAR CHAVE À CONTA
+	Entrar em https://github.com/settings/keys
+	> New SSH Key
+	Dar um título
+	Copiar chave (em ~/.ssh/id_rsa.pub)
+
+CONFIGURAR
+	VERIFICAR CONFIGURAÇÕES
+		$ git config --list
+	EDITOR (substituir "[editor]" pela comando para o seu editor
+		$ git config --global core.editor [editor]
+	IDENTIDADE
+		$ git config --global user.email "you@example.com"
+		$ git config --global user.name "Your Name"
+
+ACESSAR REPOSITÓRIO/PREPARAR WORKING DIRECTORY
+	(VAI PRECISAR ESTAR COM PERMISSÃO DE ACESSO AO REPOSITÓRIO)
+	$ git clone ssh://git@github.com/llucasll/BubbleShooter.git
+	$ cd BubbleShooter/
+
+$ git status
+
+$ git push origin master
+
