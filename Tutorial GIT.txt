@@ -24,18 +24,25 @@ ADICIONAR CHAVE À CONTA
 CONFIGURAR
 	VERIFICAR CONFIGURAÇÕES
 		$ git config --list
-	EDITOR (substituir "[editor]" pela comando para o seu editor
+	EDITOR (substituir "[editor]" pela comando para o seu editor)
 		$ git config --global core.editor [editor]
 	IDENTIDADE
 		$ git config --global user.email "you@example.com"
 		$ git config --global user.name "Your Name"
+	SIMPLIFICAR PUSH
+		$ git config --global push.default matching
 
-ACESSAR REPOSITÓRIO/PREPARAR WORKING DIRECTORY
-	(VAI PRECISAR ESTAR COM PERMISSÃO DE ACESSO AO REPOSITÓRIO)
-	$ git clone ssh://git@github.com/llucasll/BubbleShooter.git
-	$ cd BubbleShooter/
+PREPARAR WORKING DIRECTORY
+	Criar uma pasta e iniciar o terminal a partir dela
+	ACESSAR REPOSITÓRIO
+		(VAI PRECISAR ESTAR COM PERMISSÃO DE ACESSO AO REPOSITÓRIO)
+		$ git clone ssh://git@github.com/llucasll/BubbleShooter.git
+		$ cd BubbleShooter/
 
-$ git status
+//
+
+VERIFICAR SE EXISTEM MODIFICAÇÕES LOCAIS
+	$ git status
 
 $ git push origin master
 
