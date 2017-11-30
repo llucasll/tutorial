@@ -44,5 +44,15 @@ PREPARAR WORKING DIRECTORY
 VERIFICAR SE EXISTEM MODIFICAÇÕES LOCAIS
 	$ git status
 
-$ git push origin master
+DOWNLOAD
+	$ git pull
 
+UPLOAD
+	$ git add *
+		Ou $ git add .
+		Ou $ git add -A
+	Se quiser recomeçar
+		$ git reset
+	$ git commit -m "[Título]"
+	$ git push
+		Ou $ git push origin master
