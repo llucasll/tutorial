@@ -47,7 +47,12 @@ VERIFICAR SE EXISTEM MODIFICAÇÕES LOCAIS
 DOWNLOAD
 	$ git pull
 
-UPLOAD
+UPLOAD - CAMINHO FÁCIL (TORTUOSO)
+	git commit -am "Update"
+		Means "All, with Message.."
+	git pull
+
+UPLOAD - OUTRO CAMINHO
 	$ git add *
 		Ou $ git add .
 		Ou $ git add -A
