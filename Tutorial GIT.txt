@@ -50,7 +50,7 @@ DOWNLOAD
 UPLOAD - CAMINHO FÁCIL (TORTUOSO)
 	git commit -am "Update"
 		Means "All, with Message.."
-	git pull
+	git push
 
 UPLOAD - OUTRO CAMINHO
 	$ git add *
