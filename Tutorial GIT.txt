@@ -50,11 +50,14 @@ DOWNLOAD
 UPLOAD - CAMINHO FÁCIL (TORTUOSO)
 	git commit -am "Update"
 		Means "All, with Message.."
+		Essa opção não inclui novos arquivos. Para incluí-los, executar manualmente
+			$ git add .
 	git push
 
 UPLOAD - OUTRO CAMINHO
-	$ git add *
-		Ou $ git add .
+	$ git add .
+		Ou $ git add *
+			Não usar essa opção pq pelo visto ela não abrange arquivos ocultos (iniciados com .)
 		Ou $ git add -A
 	Se quiser recomeçar
 		$ git reset
