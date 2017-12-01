@@ -42,17 +42,27 @@ PREPARAR WORKING DIRECTORY
 //
 
 VERIFICAR SE EXISTEM MODIFICAÇÕES LOCAIS
+	(em comparação ao último commit local)
 	$ git status
 
 DOWNLOAD
 	$ git pull
 
+UPLOAD - CAMINHO ULTRAFÁCIL
+	$ git add .; git commit -m "Update"; git push
+
+UTILÍSSIMO
+	$ find ./caminho -type f -exec grep -l -i "TODO" {} \;
+		Procura em todos os arquivos no caminho pela string TODO
+
+//
+
 UPLOAD - CAMINHO FÁCIL (TORTUOSO)
-	git commit -am "Update"
+	$ git commit -am "Update"
 		Means "All, with Message.."
 		Essa opção não inclui novos arquivos. Para incluí-los, executar manualmente
 			$ git add .
-	git push
+	$ git push
 
 UPLOAD - OUTRO CAMINHO
 	$ git add .
