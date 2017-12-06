@@ -52,8 +52,8 @@ UPLOAD - CAMINHO ULTRAFÁCIL
 	$ git add .; git commit -m "Update"; git push
 
 UTILÍSSIMO
-	$ find ./caminho -type f -exec grep -l -i "TODO" {} \;
-		Procura em todos os arquivos no caminho pela string TODO
+	$ find ./ -type f -exec grep -l -i "TODO" {} \;
+		Procura em todos os arquivos na pasta atual (./) pela string TODO
 
 //
 
