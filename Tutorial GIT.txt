@@ -39,6 +39,12 @@ PREPARAR WORKING DIRECTORY
 		$ git clone ssh://git@github.com/llucasll/BubbleShooter.git
 		$ cd BubbleShooter/
 
+VOLTAR [N] COMMITS
+	$ git reset HEAD~[N]
+	$ git reset --hard
+	$ git push origin :[BRANCH]
+	$ git push origin [BRANCH]:[BRANCH]
+
 //
 
 VERIFICAR SE EXISTEM MODIFICAÇÕES LOCAIS
