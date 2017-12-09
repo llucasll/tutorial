@@ -99,3 +99,8 @@ RENOMEAR BRANCH
 	#push the new branch to remote         
 	$ git push <remote> new_name
 
+EXCLUIR BRANCH
+	LOCALMENTE
+		$ git branch -d [BRANCH]
+	REMOTAMENTE
+		$ git push origin :[BRANCH]
