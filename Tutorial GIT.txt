@@ -84,10 +84,8 @@ UPLOAD - OUTRO CAMINHO
 //
 
 VOLTAR [N] COMMITS
-	$ git reset HEAD~[N]
-	$ git reset --hard
-	$ git push origin :[BRANCH]
-	$ git push origin [BRANCH]:[BRANCH]
+	$ git reset HEAD~[N] --hard
+	$ git push --force
 	
 RENOMEAR BRANCH
 	#rename the local branch to the new name
