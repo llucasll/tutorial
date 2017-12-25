@@ -1,120 +1,143 @@
-INSTALAR
-	$ sudo apt install git
+INSTALAÇÃO E CONFIGURAÇÃO
 
-CONFIGURAR SSH
+	INSTALAR
+		$ sudo apt install git
 
-	Tutorial: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
-
-	VER SE TEM CHAVE SSH
-		$ ls -a ~/.ssh
-	GERAR SSH (substituir "[label]" por um rótulo personalizado)
-		$ ssh-keygen -t rsa -b 4096 -C "[label]"
-		ENTER para caminho default
-		Inserir passphrase
 	CONFIGURAR SSH
-		$ eval "$(ssh-agent -s)"
-		$ ssh-add ~/.ssh/id_rsa
 
-ADICIONAR CHAVE À CONTA
-	Entrar em https://github.com/settings/keys
-	> New SSH Key
-	Dar um título
-	Copiar chave (em ~/.ssh/id_rsa.pub)
+		Tutorial: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 
-CONFIGURAR
-	VERIFICAR CONFIGURAÇÕES
-		$ git config --list
-	EDITOR (substituir "[editor]" pela comando para o seu editor)
-		$ git config --global core.editor [editor]
-	IDENTIDADE
-		$ git config --global user.email "you@example.com"
-		$ git config --global user.name "Your Name"
-	SIMPLIFICAR PUSH
-		$ git config --global push.default matching
+		VER SE TEM CHAVE SSH
+			$ ls -a ~/.ssh
+		GERAR SSH (substituir "[label]" por um rótulo personalizado)
+			$ ssh-keygen -t rsa -b 4096 -C "[label]"
+			ENTER para caminho default
+			Inserir passphrase
+		CONFIGURAR SSH
+			$ eval "$(ssh-agent -s)"
+			$ ssh-add ~/.ssh/id_rsa
 
-PREPARAR WORKING DIRECTORY
-	Criar uma pasta e iniciar o terminal a partir dela
-	ACESSAR REPOSITÓRIO
-		(VAI PRECISAR ESTAR COM PERMISSÃO DE ACESSO AO REPOSITÓRIO)
-		$ git clone ssh://git@github.com/llucasll/BubbleShooter.git
-		$ cd BubbleShooter/
+	ADICIONAR CHAVE À CONTA
+		Entrar em https://github.com/settings/keys
+		> New SSH Key
+		Dar um título
+		Copiar chave (em ~/.ssh/id_rsa.pub)
 
-//
+	CONFIGURAR
+		VERIFICAR CONFIGURAÇÕES
+			$ git config --list
+		EDITOR (substituir "[editor]" pela comando para o seu editor)
+			$ git config --global core.editor [editor]
+		IDENTIDADE
+			$ git config --global user.email "you@example.com"
+			$ git config --global user.name "Your Name"
+		SIMPLIFICAR PUSH
+			$ git config --global push.default matching
 
-PARA CADA NOVO BRANCH, CONFIGURAR
-	$ git branch --set-upstream-to=origin/[branch]
-	A forma completa permite linkar qualquer branch local com o servidor (não apenas o que você está no momento)
-	$ git branch --set-upstream-to=origin/[branch] [branch]
-//
+	PREPARAR WORKING DIRECTORY
+		Criar uma pasta e iniciar o terminal a partir dela
+		ACESSAR REPOSITÓRIO
+			(VAI PRECISAR ESTAR COM PERMISSÃO DE ACESSO AO REPOSITÓRIO)
+			$ git clone ssh://git@github.com/llucasll/BubbleShooter.git
+			$ cd BubbleShooter/
 
-VERIFICAR SE EXISTEM MODIFICAÇÕES LOCAIS
-	(em comparação ao último commit local)
-	$ git status
+	//
 
-DOWNLOAD
-	$ git pull
-
-UPLOAD - CAMINHO ULTRAFÁCIL
-	$ git add .; git commit -m "Update"; git push
-
-UTILÍSSIMO
-	$ find ./ -type f -exec grep -l -i "TODO" {} \;
-		Procura em todos os arquivos na pasta atual (./) pela string TODO
-
-//
-
-UPLOAD - CAMINHO FÁCIL (TORTUOSO)
-	$ git commit -am "Update"
-		Means "All, with Message.."
-		Essa opção não inclui novos arquivos. Para incluí-los, executar manualmente
-			$ git add .
-	$ git push
-
-UPLOAD - OUTRO CAMINHO
-	$ git add .
-		Ou $ git add *
-			Não usar essa opção pq pelo visto ela não abrange arquivos ocultos (iniciados com .)
-		Ou $ git add -A
-	Se quiser recomeçar
-		$ git reset
-	$ git commit -m "[Título]"
-	$ git push
-		Ou $ git push origin master
+	PARA CADA NOVO BRANCH, CONFIGURAR
+		$ git branch --set-upstream-to=origin/[branch]
 		
-//
-
-VOLTAR [N] COMMITS
-	$ git reset HEAD~[N] --hard
-	$ git push --force
+		# A forma completa permite linkar qualquer branch local com o servidor (não apenas o que você está no momento)
+		$ git branch --set-upstream-to=origin/[branch] [branch]
 	
-RENOMEAR BRANCH
-	#rename the local branch to the new name
-	$ git branch -m old_name new_name 
+BÁSICO
 
-	#delete the old branch on remote - where <remote> is eg. origin
-	$ git push <remote> --delete old_name
+	VERIFICAR SE EXISTEM MODIFICAÇÕES LOCAIS (NO WORKING DIRECTORY)
+		(em comparação ao último commit local)
+		$ git status
 
-	#push the new branch to remote         
-	$ git push <remote> new_name
+	DOWNLOAD
+		$ git pull
 
-EXCLUIR BRANCH
-	LOCALMENTE
-		$ git branch -d [BRANCH]
-	REMOTAMENTE
-		$ git push origin :[BRANCH]
-		
-EXIBIR
-	$ git show
-	$ git log
+	UPLOAD - CAMINHO ULTRAFÁCIL
+		$ git add .; git commit -m "Update"; git push
 
-TUTORIAL PRA CONVERTER BRANCH EM TAG
-	CRIAR TAG
-		$ git checkout []
-		$ git tag -a [] -m '[]'
-		$ git checkout master
-	APAGAR BRANCH
-		$ git branch -d []
-		$ git push origin :[]
-	ENVIAR ATUALIZAÇÕES
-		$ git push origin --tags
+	UTILÍSSIMO
+		$ find ./ -type f -exec grep -l -i "TODO" {} \;
+			Procura em todos os arquivos na pasta atual (./) pela string TODO
+
+	//
+
+	UPLOAD - CAMINHO FÁCIL (TORTUOSO)
+		$ git commit -am "Update"
+			Means "All, with Message.."
+			Essa opção não inclui novos arquivos. Para incluí-los, executar manualmente
+				$ git add .
 		$ git push
+
+	UPLOAD - OUTRO CAMINHO
+		$ git add .
+			Ou $ git add *
+				Não usar essa opção pq pelo visto ela não abrange arquivos ocultos (iniciados com .)
+			Ou $ git add -A
+		Se quiser recomeçar
+			$ git reset
+		$ git commit -m "[Título]"
+		$ git push
+			Ou $ git push origin master
+		
+AVANÇADO
+
+	VOLTAR [N] COMMITS
+		$ git reset HEAD~[N] --hard
+		$ git push --force
+	
+	RENOMEAR BRANCH
+		#rename the local branch to the new name
+		$ git branch -m old_name new_name
+			# -m == --move
+
+		#delete the old branch on remote - where <remote> is eg. origin
+		$ git push <remote> --delete old_name
+
+		#push the new branch to remote         
+		$ git push <remote> new_name
+		
+	MOVER BRANCH (FAZER APONTAR PARA OUTRO COMMIT)
+		$ git branch -f [BRANCH] [NOVA POSIÇÃO]
+
+	EXCLUIR BRANCH
+		LOCALMENTE
+			$ git branch -d [BRANCH]
+		REMOTAMENTE
+			$ git push origin :[BRANCH]
+		
+	EXIBIR
+		$ git show # mostra as modificações do último commit por extenso, como no GitHub
+		$ git log # mostra a lista de commits a partir de HEAD
+
+	TUTORIAL PRA CONVERTER BRANCH EM TAG
+		CRIAR TAG
+			$ git checkout [BRANCH]
+			$ git tag -a [TAG NAME] -m '[MESSAGE]'
+			$ git checkout master
+		APAGAR BRANCH
+			$ git branch -d [BRANCH]
+			$ git push origin :[BRANCH]
+		ENVIAR ATUALIZAÇÕES
+			$ git push origin --tags
+			$ git push
+
+	OUTROS
+		VERIFICAR POR MODIFICAÇÕES LOCAIS (WD)
+			$ git diff [BRANCH]
+			
+		Clean unknown files from the working tree
+			$ git clean
+			
+		DESCARTAR MODIFICAÇÕES LOCAIS
+			(descarta o trabalho no WD e retorna ao commit para o qual HEAD aponta)
+			$ git reset --hard
+		
+		DESCARTAR VERSÃO LOCAL E FORÇAR SOBRESCREVER COM A REMOTA
+			$ git reset --hard origin/master
+		
