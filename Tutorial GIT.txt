@@ -102,3 +102,19 @@ EXCLUIR BRANCH
 		$ git branch -d [BRANCH]
 	REMOTAMENTE
 		$ git push origin :[BRANCH]
+		
+EXIBIR
+	$ git show
+	$ git log
+
+TUTORIAL PRA CONVERTER BRANCH EM TAG
+	CRIAR TAG
+		$ git checkout []
+		$ git tag -a [] -m '[]'
+		$ git checkout master
+	APAGAR BRANCH
+		$ git branch -d []
+		$ git push origin :[]
+	ENVIAR ATUALIZAÇÕES
+		$ git push origin --tags
+		$ git push
