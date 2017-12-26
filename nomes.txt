@@ -1,0 +1,4 @@
+guia
+tutorial
+guide
+help

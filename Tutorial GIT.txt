@@ -90,8 +90,16 @@ AVANÇADO
 	EXIBIR
 		$ git branch -a # All, mostra remotos tbm
 		$ git tag
+		
+		$ gitk
+			Antes, instalar
+			$ sudo apt install gitk
+		$ git diff
 		$ git show # mostra as modificações do último commit por extenso, como no GitHub
 		$ git log # mostra a lista de commits a partir de HEAD
+		
+	COMPARAR VERSÕES DE UM ARQUIVO
+		$ git diff [COMMIT/BRANCH/TAG a] [COMMIT/BRANCH/TAG b] -- [ARQUIVO]
 
 	VOLTAR [N] COMMITS
 		$ git reset HEAD~[N] --hard
