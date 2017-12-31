@@ -63,7 +63,7 @@ BÁSICO
 
 	UTILÍSSIMO
 		$ find ./ -type f -exec grep -l -i "TODO" {} \;
-			Procura em todos os arquivos na pasta atual (./) pela string TODO
+		# Procura em todos os arquivos na pasta atual (./) pela string TODO
 
 	//
 
