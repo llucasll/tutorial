@@ -94,7 +94,7 @@ AVANÇADO
 		$ gitk
 			Antes, instalar
 			$ sudo apt install gitk
-		$ git diff
+		$ git diff --color=always | less -r
 		$ git show # mostra as modificações do último commit por extenso, como no GitHub
 		$ git log # mostra a lista de commits a partir de HEAD
 		
@@ -152,3 +152,5 @@ AVANÇADO
 		DESCARTAR VERSÃO LOCAL E FORÇAR SOBRESCREVER COM A REMOTA
 			$ git reset --hard origin/master
 		
+	$ git fetch # atualizar referências locais às remotas, sem interferir nos branches locais
+	$ git log --color=always | less -r
