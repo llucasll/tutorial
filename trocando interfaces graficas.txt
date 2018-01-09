@@ -1,0 +1,46 @@
+RETORNAR PACOTES PARA A VERSÃO ANTERIOR, POR BUG EM PROCESSADORES DA INTEL + UNITY
+sudo apt install libegl1-mesa=11.2.0-1ubuntu2 libwayland-egl1-mesa=11.2.0-1ubuntu2 libgl1-mesa-dri=11.2.0-1ubuntu2 libgbm1=11.2.0-1ubuntu2
+
+GERENCIADORES DE PACOTES
+dpkg
+apt
+aptitude
+synaptic
+
+//
+
+ESSA SEÇÃO TRATA DA INSTALAÇÃO DAS INTERFACES GRÁFICAS ABAIXO NO UBUNTU, E A POSTERIOR RECUPERAÇÃO DO UNITY PARA OS PADRÕES
+
+INSTALAÇÃO
+
+	INSTALAÇÃO
+		sudo apt install lubuntu-desktop # (tive que instalar e reinstalar)
+		sudo apt install kubuntu-desktop
+
+	AJUDA
+		apt-cache showpkg kde-config-telepathy-accounts | less
+		dpkg --audit kde-config-telepathy-accounts
+		history | less
+		sudo lightdm # força a execuçã da interface gráfica
+
+	CORREÇÕES NA INSTALAÇÃO (acho que só para o KDE; reinicar o PC várias vezes...)
+		sudo apt-get clean && sudo apt-get update
+		sudo dpkg --configure -a
+		sudo apt-get -o Dpkg::Options::="--force-overwrite" install kde-config-telepathy-accounts
+		sudo dpkg-reconfigure lightdm # acho que essa linha faz a interface gráfica voltar a funcionar
+
+RECUPERAR UNITY
+
+	ANIMAÇÃO DO BOOT
+		sudo update-alternatives --config default.plymouth
+		sudo update-initramfs -u
+
+	SETAR A TELA DE LOGIN PARA OS DEFAULTS
+		Adicionar a /etc/lightdm/lightdm.conf
+		{
+[SeatDefaults]
+greeter-session=unity-greeter
+user-session=ubuntu
+autologin-user=myusername
+autologin-user-timeout=0
+		}
