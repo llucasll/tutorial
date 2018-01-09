@@ -1,0 +1,20 @@
+sudo apt install lubuntu-desktop
+sudo apt install kubuntu-desktop
+
+dpkg
+apt
+aptitude
+synaptic
+
+apt-cache showpkg kde-config-telepathy-accounts | less
+# man dpkg
+dpkg --audit kde-config-telepathy-accounts
+sudo apt-get clean && sudo apt-get update
+sudo dpkg --configure -a
+sudo apt-get -o Dpkg::Options::="--force-overwrite" install kde-config-telepathy-accounts
+sudo dpkg-reconfigure lightdm
+
+sudo update-alternatives --config default.plymouth
+sudo update-initramfs -u
+
+history | less
