@@ -40,6 +40,15 @@ INSTALAÇÃO E CONFIGURAÇÃO
 			(VAI PRECISAR ESTAR COM PERMISSÃO DE ACESSO AO REPOSITÓRIO)
 			$ git clone ssh://git@github.com/llucasll/BubbleShooter.git
 			$ cd BubbleShooter/
+		COMEÇAR UM REPOSITÓRIO
+			//criar commit localmente e no GitHub, e então
+			git config user.email --
+			git config user.name --
+			git add .; git commit -m "Primeiro commit"
+			git remote add origin --
+			git branch --set-upstream-to=origin/master
+			git pull --allow-unrelated-histories
+			git push
 
 	//
 
